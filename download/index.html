@@ -9,7 +9,7 @@
 <html lang="en-US">
 <!--<![endif]-->
 
-<!-- Mirrored from localhost/wordpress_mya/download/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Aug 2019 08:04:09 GMT -->
+<!-- Mirrored from localhost/wordpress_mya/download/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Aug 2019 08:59:53 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 	<meta charset="UTF-8">
@@ -154,21 +154,12 @@ img.emoji {
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-4bc628a elementor-widget elementor-widget-text-editor" data-id="4bc628a" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix">
-<div class="container">
-  <form>
-    <div class="form-group">
-      <label for="searchInput">Select version</label>
-	  <select id="version" onchange="myFilter2()"></select>
-	  <label >Select State/Region</label>
-	  <select id="state" onchange="myFilter2()"></select>
-
-    </div>
-  </form>
-
-  <p />
-</div>
-
+					<div class="elementor-text-editor elementor-clearfix"><div class="container"><form>
+<div class="form-group"><label for="searchInput">Select version</label>
+<select id="version" onchange="myFilter2()"></select>
+<label>Select State/Region</label>
+<select id="state" onchange="myFilter2()"></select></div>
+</form></div>
 <script src="../../../cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <div id="download_table" class="container"></div>
 <script>
@@ -179,8 +170,8 @@ img.emoji {
 		thead.append("th").text("Version");
 		thead.append("th").text("State/Region");
 		thead.append("th").text("Download");
-	var path = "http://localhost/ncs_downloads/"
-	d3.csv("http://localhost/ncs_csv/downloads.csv", function(error, data) {
+	var path = "https://ncs-gad.github.io/ncs_downloads/"
+	d3.csv("https://ncs-gad.github.io/ncs_csv/downloads.csv", function(error, data) {
       if (error) throw error;
       var tr = tbody.selectAll("tr")
       		.data(data)
@@ -240,17 +231,7 @@ function myFilter2() {
   tr = table.getElementsByTagName("tr");
 
   // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td0 = tr[i].getElementsByTagName("td")[0];
-	td1 = tr[i].getElementsByTagName("td")[1];
-    if (td0) {
-      txtValue0 = td0.textContent || td0.innerText;
-      txtValue1 = td1.textContent || td1.innerText;
-      //txtValue0 = txtValue0.toUpperCase().indexOf(filter0);
-      //txtValue1 = txtValue1.toUpperCase().indexOf(filter1);
-	  txtValue0 = txtValue0.indexOf(filter0);
-      txtValue1 = txtValue1.indexOf(filter1);
-      if ((txtValue0 > -1)&&(txtValue1 > -1)) {
+  for (i = 0; i < tr.length; i++) { td0 = tr[i].getElementsByTagName("td")[0]; td1 = tr[i].getElementsByTagName("td")[1]; if (td0) { txtValue0 = td0.textContent || td0.innerText; txtValue1 = td1.textContent || td1.innerText; //txtValue0 = txtValue0.toUpperCase().indexOf(filter0); //txtValue1 = txtValue1.toUpperCase().indexOf(filter1); txtValue0 = txtValue0.indexOf(filter0); txtValue1 = txtValue1.indexOf(filter1); if ((txtValue0 > -1)&&(txtValue1 > -1)) {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";
@@ -340,5 +321,5 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 <script type='text/javascript' src='../wp-content/plugins/elementor/assets/js/frontend.mind047.js?ver=2.6.7'></script>
 </body>
 
-<!-- Mirrored from localhost/wordpress_mya/download/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Aug 2019 08:04:11 GMT -->
+<!-- Mirrored from localhost/wordpress_mya/download/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Aug 2019 08:59:54 GMT -->
 </html>
