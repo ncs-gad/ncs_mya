@@ -181,7 +181,8 @@ img.emoji {
 		thead.append("th").text("Version");
 		thead.append("th").text("State/Region");
 		thead.append("th").text("Download");
-	var path = "https://ncs-gad.github.io/ncs_downloads/"
+		thead.append("th").text("");
+	var path = "../../ncs_downloads/"
 	d3.csv("https://ncs-gad.github.io/ncs_csv/downloads.csv", function(error, data) {
       if (error) throw error;
       var tr = tbody.selectAll("tr")
@@ -194,11 +195,24 @@ img.emoji {
 			.text(d.version);
 		self.append("td")
 			.text(d.state);
-		self.append("td")
-			.append("a")
-        		.attr("href", path + d.data )
-        		.text(d.type);
-	
+		if(d.pdf==""){
+			self.append("td")
+				.text("n.a");
+		}else{
+			self.append("td")
+				.append("a")
+				.attr("href", path + d.pdf )
+				.text("PDF");		
+		}
+		if(d.excel==""){
+			self.append("td")
+				.text("n.a");
+		}else{
+			self.append("td")
+				.append("a")
+				.attr("href", path + d.excel )
+				.text("Excel");		
+		}	
       });
 	  
 	  //generate unique values for version and admin names and make filter options
